@@ -86,13 +86,12 @@ $elevation-level-2-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
     color: $info-500 !important;
   }
 }
-
 .form-control {
   background-color: $white !important;
   font-size: 0.875rem;
   line-height: 1.5;
   height: 2.75rem;
-
+  border-radius: 0;
 }
 
 .btn-social {

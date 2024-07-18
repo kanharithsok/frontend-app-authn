@@ -19,7 +19,7 @@ const MediumLayout = () => {
         <Image className="company-logo" alt={getConfig().SITE_NAME} src={getConfig().LOGO_WHITE_URL} />
       </Hyperlink>
       <div className="ml-5 pb-4 pt-4">
-        <h1 className="display-2 banner__heading">
+        <h1 className="display-1 banner__heading">
           <span className="text-light-500">
             {formatMessage(messages['your.career.turning.point'])}{' '}
           </span>

@@ -18,7 +18,7 @@ const SmallLayout = () => {
         <Image className="company-logo" alt={getConfig().SITE_NAME} src={getConfig().LOGO_WHITE_URL} />
       </Hyperlink>
       <div className="ml-5 mr-1 pb-3.5 pt-3.5">
-        <h1 className="display-2">
+        <h1 className="display-1">
           <span className="text-light-500">
             {formatMessage(messages['your.career.turning.point'])}{' '}
           </span>
