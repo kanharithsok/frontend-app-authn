@@ -5,8 +5,8 @@ import { useIntl } from '@edx/frontend-platform/i18n';
 import { Hyperlink, Image } from '@openedx/paragon';
 import classNames from 'classnames';
 
-import logo from '../../../assets/logo.png';
 import messages from './messages';
+import logo from '../../../assets/logo.png';
 
 const LargeLayout = () => {
   const { formatMessage } = useIntl();

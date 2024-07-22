@@ -6,6 +6,7 @@ import { Hyperlink, Image } from '@openedx/paragon';
 import classNames from 'classnames';
 
 import messages from './messages';
+import logo from '../../../assets/logo.png';
 
 const SmallLayout = () => {
   const { formatMessage } = useIntl();
@@ -15,7 +16,7 @@ const SmallLayout = () => {
       <div className="col-md-12 small-screen-top-stripe" />
       <div>
         <Hyperlink destination={getConfig().MARKETING_SITE_BASE_URL}>
-          <Image className="logo-small" alt={getConfig().SITE_NAME} src={getConfig().LOGO_WHITE_URL} />
+          <Image className="logo-small" alt={getConfig().SITE_NAME} src={logo} />
         </Hyperlink>
         <div className="d-flex align-items-center m-3.5">
           <div className={classNames({ 'small-yellow-line mr-n2.5': getConfig().SITE_NAME === 'edX' })} />

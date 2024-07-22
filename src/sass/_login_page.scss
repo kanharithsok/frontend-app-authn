@@ -1,8 +1,14 @@
 .login-button-width {
     min-width: 6rem;
-    background-color: #F10207;
+    background-color: #21472E;
     border-radius: 0;
-    border: 1px solid #F10207;
+    border: 1px solid #21472E;
+}
+
+.login-button-width:hover {
+    background-color: #3EAB48;
+    border-radius: 0;
+    border: 1px solid #3EAB48;
 }
 
 .bg-primary-400 {
