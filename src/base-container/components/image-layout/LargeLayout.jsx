@@ -6,6 +6,7 @@ import { Hyperlink, Image } from '@openedx/paragon';
 
 import './index.scss';
 import messages from './messages';
+import logo from '../../../assets/logo.png';
 
 const LargeLayout = () => {
   const { formatMessage } = useIntl();
@@ -16,7 +17,7 @@ const LargeLayout = () => {
       style={{ backgroundImage: `url(${getConfig().BANNER_IMAGE_LARGE})` }}
     >
       <Hyperlink destination={getConfig().MARKETING_SITE_BASE_URL}>
-        <Image className="company-logo position-absolute" alt={getConfig().SITE_NAME} src={getConfig().LOGO_WHITE_URL} />
+        <Image className="company-logo position-absolute" alt={getConfig().SITE_NAME} src={logo} />
       </Hyperlink>
       <div className="min-vh-100 p-5 d-flex align-items-end">
         <h1 className="display-1 mw-sm mb-3 d-flex flex-column flex-shrink-0 justify-content-center">
