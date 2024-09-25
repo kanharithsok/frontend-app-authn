@@ -23,14 +23,14 @@
 }
 
 .logo-small {
-  width: 105px;
-  margin-top: 2.5rem;
+  width: 105px !important;
+  margin-top: 2.5rem !important;
   margin-left: 1.5rem;
 }
 
 .logo {
-  width: 210px;
-  margin-top: 8rem;
+  width: 210px !important;
+  margin-top: 8rem !important;
   margin-left: 5rem;
 }
 
@@ -152,13 +152,13 @@
 
 .large-screen-svg-light,
 .large-screen-svg-primary {
-  fill: #21472E;
+  fill: #21472E !important;
   overflow: hidden;
   position: absolute;
 }
 
 .large-screen-svg-primary {
-  fill: #21472E;
+  fill: #21472E !important;
 }
 
 .medium-screen-svg-light,
