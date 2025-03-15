@@ -33,13 +33,7 @@ const MediumLayout = ({ fullName }) => {
             </div>
           </div>
         </div>
-        <div className="col-md-2 bg-white p-0">
-          <svg className="w-100 h-100 medium-screen-svg-light" preserveAspectRatio="xMaxYMin meet">
-            <g transform="skewX(168)">
-              <rect x="0" y="0" height="100%" width="100%" />
-            </g>
-          </svg>
-        </div>
+      
       </div>
     </>
   );

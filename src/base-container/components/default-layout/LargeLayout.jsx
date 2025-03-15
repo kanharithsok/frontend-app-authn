@@ -5,24 +5,32 @@ import { useIntl } from '@edx/frontend-platform/i18n';
 import { Hyperlink, Image } from '@openedx/paragon';
 import classNames from 'classnames';
 
-import messages from './messages';
 import logo from '../../../assets/logo.png';
+import messages from './messages';
 
 const LargeLayout = () => {
   const { formatMessage } = useIntl();
 
   return (
-    <div className="w-50 d-flex">
-      <div className="col-md-9 bg-primary-400">
-        <Hyperlink destination={getConfig().MARKETING_SITE_BASE_URL}>
+    <div className="cover-left w-100 d-flex">
+      <div className="col-md-12 bg-primary-400 vh-100 d-flex flex-column position-relative">
+        <Hyperlink
+          className="bg-yellow"
+          destination={getConfig().MARKETING_SITE_BASE_URL}
+          style={{ height: '40%' }}
+        >
           <Image className="logo position-absolute" alt={getConfig().SITE_NAME} src={logo} />
         </Hyperlink>
-        <div className="min-vh-100 d-flex align-items-center">
-          <div className={classNames({ 'large-yellow-line mr-n4.5': getConfig().SITE_NAME === 'edX' })} />
+        <div className="d-flex justify-content-start align-items-start" >
+          <svg className="d-flex justify-content-end" width="10%">
+            <g transform="skewX(180)">
+              <rect x="90%" y="0" height="100%" width="10%" fill="green" />
+            </g>
+          </svg>
           <h1
             className={classNames(
-              'display-1 text-white mw-xs',
-              { 'ml-6': getConfig().SITE_NAME !== 'edX' },
+              'display-1 text-white mw-xm',
+              { 'ml-2': getConfig().SITE_NAME !== 'edX' },
             )}
           >
             {formatMessage(messages['start.learning'])}
@@ -31,13 +39,6 @@ const LargeLayout = () => {
             </div>
           </h1>
         </div>
-      </div>
-      <div className="col-md-3 bg-white p-0">
-        <svg className="ml-n1 w-100 h-100 large-screen-svg-primary" preserveAspectRatio="xMaxYMin meet">
-          <g transform="skewX(180)">
-            <rect x="0" y="0" height="100%" width="100%" />
-          </g>
-        </svg>
       </div>
     </div>
   );
