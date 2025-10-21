@@ -71,6 +71,11 @@ const messages = defineMessages({
     defaultMessage: '8 characters',
     description: 'password requirement to have a minimum of 8 characters',
   },
+  'one.symbol': {
+    id: 'one.symbol',
+    defaultMessage: '1 symbol',
+    description: 'password requirement to have 1 symbol',
+  },
   'password.sr.only.helping.text': {
     id: 'password.sr.only.helping.text',
     defaultMessage: 'Password must contain at least 8 characters, at least one letter, and at least one number',

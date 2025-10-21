@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useIntl } from '@edx/frontend-platform/i18n';
@@ -10,11 +10,12 @@ import {
 } from '@openedx/paragon/icons';
 import PropTypes from 'prop-types';
 
-import messages from './messages';
 import { LETTER_REGEX, NUMBER_REGEX } from '../data/constants';
 import { clearRegistrationBackendError, fetchRealtimeValidations } from '../register/data/actions';
 import { validatePasswordField } from '../register/data/utils';
+import messages from './messages';
 
+const SYMBOL_REGEX = /[!@#$%^&*(),.?":{}|<>]/; // added symbol regex
 const PasswordField = (props) => {
   const { formatMessage } = useIntl();
   const dispatch = useDispatch();
@@ -113,6 +114,11 @@ const PasswordField = (props) => {
         {props.value.length >= 8 ? <Icon className="text-success mr-1" src={Check} /> : <Icon className="mr-1 text-light-700" src={Remove} />}
         {formatMessage(messages['eight.characters'])}
       </span>
+      <span id="symbol-check" className="d-flex align-items-center">
+        {SYMBOL_REGEX.test(props.value) ? <Icon className="text-success mr-1" src={Check} /> : <Icon className="mr-1 text-light-700" src={Remove} />}
+        {formatMessage(messages['one.symbol'])}
+      </span>
+
     </Tooltip>
   );
 
