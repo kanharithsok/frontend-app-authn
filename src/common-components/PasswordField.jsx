@@ -70,7 +70,15 @@ const PasswordField = (props) => {
     }
     setTimeout(() => setShowTooltip(props.showRequirements && true), 150);
   };
-
+  // truncate input to max 16 chars and forward to parent
+  const handleChange = (e) => {
+    const raw = e.target?.value ?? '';
+    const truncated = raw.slice(0, 16);
+    if (props.handleChange) {
+      // forward a simple event-like object consistent with other handlers
+      props.handleChange({ target: { name: props.name, value: truncated } });
+    }
+  };
   const HideButton = (
     <IconButton
       onFocus={handleFocus}
@@ -135,7 +143,9 @@ const PasswordField = (props) => {
           aria-invalid={props.errorMessage !== ''}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          onChange={props.handleChange}
+          // onChange={props.handleChange}
+          onChange={handleChange}
+          maxLength={16}
           controlClassName={props.borderClass}
           trailingElement={isPasswordHidden ? ShowButton : HideButton}
           floatingLabel={props.floatingLabel}
