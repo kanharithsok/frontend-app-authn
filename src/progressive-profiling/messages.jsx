@@ -34,7 +34,7 @@ const messages = defineMessages({
   // modal dialog box
   'continue.to.platform': {
     id: 'continue.to.platform',
-    defaultMessage: 'Continue to {platformName}',
+    defaultMessage: 'Continue to CBC Academy',
     description: 'Button text for modal when user chooses "skip for now" option',
   },
   'modal.title': {
