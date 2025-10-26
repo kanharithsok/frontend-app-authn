@@ -236,7 +236,7 @@ const RegistrationPage = (props) => {
       setErrorCode(prevState => ({ type: FORM_SUBMISSION_ERROR, count: prevState.count + 1 }));
       return;
     }
-
+    payload.next = '/logout';
     // Preparing payload for submission
     payload = prepareRegistrationPayload(
       payload,
