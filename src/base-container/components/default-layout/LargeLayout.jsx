@@ -1,4 +1,3 @@
-import React from 'react';
 
 import { getConfig } from '@edx/frontend-platform';
 import { useIntl } from '@edx/frontend-platform/i18n';
@@ -21,12 +20,12 @@ const LargeLayout = () => {
         >
           <Image className="logo position-absolute" alt={getConfig().SITE_NAME} src={logo} />
         </Hyperlink>
-        <div className="d-flex justify-content-start align-items-start" >
-          <svg className="d-flex justify-content-end" width="10%">
+        <div className="d-flex justify-content-start align-items-start" style={{ height: '75%', paddingLeft: '30%' }}>
+          {/* <svg className="d-flex justify-content-end" width="10%">
             <g transform="skewX(180)">
               <rect x="90%" y="0" height="100%" width="10%" fill="green" />
             </g>
-          </svg>
+          </svg> */}
           <h1
             className={classNames(
               'display-1 text-white mw-xm',

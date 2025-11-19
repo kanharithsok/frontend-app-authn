@@ -12,5 +12,9 @@
 }
 
 .bg-primary-400 {
-    background-color: #21472E !important;
+    background-image: url('../assets/cover.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+   // background-color: #21472E !important;
 }
