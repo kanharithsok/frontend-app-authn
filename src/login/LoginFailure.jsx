@@ -156,20 +156,22 @@ const LoginFailureMessage = (props) => {
       break;
     }
     case INCORRECT_EMAIL_PASSWORD:
-      if (context.failureCount <= 1) {
-        errorMessage = <p>{formatMessage(messages['login.incorrect.credentials.error'])}</p>;
-      } else if (context.failureCount === 2) {
-        errorMessage = (
-          <p>
-            <FormattedMessage
-              id="login.incorrect.credentials.error.with.reset.link"
-              defaultMessage="The username, email, or password you entered is incorrect. Please try again or {resetLink}."
-              values={{ resetLink }}
-            />
-          </p>
-        );
-      }
+      errorMessage = <p>{formatMessage(messages['login.incorrect.credentials.error'])}</p>;
       break;
+      // if (context.failureCount <= 1) {
+      // } else if (context.failureCount === 2) {
+      //   errorMessage = (
+      //     <p>
+      //       <FormattedMessage
+      //         id="login.incorrect.credentials.error.with.reset.link"
+      //         defaultMessage="The username, email, or password you entered is incorrect.
+      //  Please try again or {resetLink}."
+      //         values={{ resetLink }}
+      //       />
+      //     </p>
+      //   );
+      // }
+      // break;
     case NUDGE_PASSWORD_CHANGE:
       // Need to clear the CSRF token here to fetch a new one because token is already rotated after successful login.
       if (authService) {
