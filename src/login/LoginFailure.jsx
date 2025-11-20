@@ -108,33 +108,48 @@ const LoginFailureMessage = (props) => {
       errorMessage = <p>{formatMessage(messages['login.form.invalid.error.message'])}</p>;
       break;
     case FAILED_LOGIN_ATTEMPT: {
-      resetLink = (
-        <Hyperlink destination="reset" isInline>
-          {formatMessage(messages['login.incorrect.credentials.error.before.account.blocked.text'])}
-        </Hyperlink>
-      );
-      errorMessage = (
-        <>
+      if (context.failureCount <= 1) {
+        errorMessage = <p>{formatMessage(messages['login.incorrect.credentials.error'])}</p>;
+      } else if (context.failureCount === 2) {
+        errorMessage = (
           <p>
             <FormattedMessage
-              id="login.incorrect.credentials.error.attempts.text.1"
-              description="Error message for incorrect email or password"
-              defaultMessage="The username, email or password you entered is incorrect. You have {remainingAttempts} more sign in
-                attempts before your account is temporarily locked."
-              values={{ remainingAttempts: context.remainingAttempts }}
-            />
-          </p>
-          <p>
-            <FormattedMessage
-              id="login.incorrect.credentials.error.attempts.text.2"
-              description="Part of error message for incorrect email or password"
-              defaultMessage="If you've forgotten your password, {resetLink}"
+              id="login.incorrect.credentials.error.with.reset.link"
+              defaultMessage="The username, email, or password you entered is incorrect. Please try again or {resetLink}."
               values={{ resetLink }}
             />
           </p>
-        </>
-      );
+        );
+      }
       break;
+      // resetLink = (
+      //   <Hyperlink destination="reset" isInline>
+      //     {formatMessage(messages['login.incorrect.credentials.error.before.account.blocked.text'])}
+      //   </Hyperlink>
+      // );
+      // errorMessage = (
+      //   <>
+      //     <p>
+      //       <FormattedMessage
+      //         id="login.incorrect.credentials.error.attempts.text.1"
+      //         description="Error message for incorrect email or password"
+      //         defaultMessage="The username, email or password you entered is incorrect.
+      //  You have {remainingAttempts} more sign in
+      //           attempts before your account is temporarily locked."
+      //         values={{ remainingAttempts: context.remainingAttempts }}
+      //       />
+      //     </p>
+      //     <p>
+      //       <FormattedMessage
+      //         id="login.incorrect.credentials.error.attempts.text.2"
+      //         description="Part of error message for incorrect email or password"
+      //         defaultMessage="If you've forgotten your password, {resetLink}"
+      //         values={{ resetLink }}
+      //       />
+      //     </p>
+      //   </>
+      // );
+      // break;
     }
     case ACCOUNT_LOCKED_OUT: {
       errorMessage = (
