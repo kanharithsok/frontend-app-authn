@@ -108,19 +108,7 @@ const LoginFailureMessage = (props) => {
       errorMessage = <p>{formatMessage(messages['login.form.invalid.error.message'])}</p>;
       break;
     case FAILED_LOGIN_ATTEMPT: {
-      if (context.failureCount <= 1) {
-        errorMessage = <p>{formatMessage(messages['login.incorrect.credentials.error'])}</p>;
-      } else if (context.failureCount === 2) {
-        errorMessage = (
-          <p>
-            <FormattedMessage
-              id="login.incorrect.credentials.error.with.reset.link"
-              defaultMessage="The username, email, or password you entered is incorrect. Please try again or {resetLink}."
-              values={{ resetLink }}
-            />
-          </p>
-        );
-      }
+      errorMessage = <p>{formatMessage(messages['login.incorrect.credentials.error'])}</p>;
       break;
       // resetLink = (
       //   <Hyperlink destination="reset" isInline>
